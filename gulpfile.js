@@ -7,6 +7,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
+    htmlmin = require('gulp-htmlmin'),
     ttfToWoff = require("gulp-ttf-to-woff"),
     ttfToWoff2 = require("gulp-ttftowoff2"),
     fs = require('fs'),
@@ -14,7 +15,9 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     webpackStream = require('webpack-stream'),
     webpack = require('webpack'),
     uglify = require('gulp-uglify'),
-    tiny = require('gulp-tinypng-compress')
+    tiny = require('gulp-tinypng-compress'),
+    gutil = require('gulp-util');
+    ftp = require('vinyl-ftp');
 
 
   
@@ -79,6 +82,9 @@ const htmlInclude = () => {
                 prefix: '@@',
                 basepath: '@file'
             }))
+            .pipe(htmlmin({
+                collapseWhitespace: true
+              }))
             .pipe(dest('./app'))
             .pipe(browserSync.stream())
 }
