@@ -1,0 +1,1 @@
+{"version":3,"sources":["_second.scss","main.scss"],"names":[],"mappings":"AAAA,KACI,UAAA,KCCJ,MACI,iBAAA,QACA,WACI,MAAA","file":"main.min.css","sourcesContent":["body{\n    font-size: 30px;\n}","@import \"second\";\n\n.blue{\n    background-color: rgb(44, 43, 43);\n    &_item {\n        color: wheat;\n    }\n}"]}

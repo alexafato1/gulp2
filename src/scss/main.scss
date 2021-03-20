@@ -1,0 +1,8 @@
+@import "second";
+
+.blue{
+    background-color: rgb(44, 43, 43);
+    &_item {
+        color: wheat;
+    }
+}
